@@ -50,11 +50,16 @@
     if (isset($_POST['formid']) && isset($_SESSION['formid']) && $_POST["formid"] == $_SESSION["formid"])
     {
       $_SESSION["formid"] = '';
+      
+      echo "<h2 class='success_message'>" . $_POST["displayname"] . " added to client table.</h2>";
+      echo "<div class='button_wrapper'><a class='button' href='index.php'>Go Back</a></div>";
     }
     else
     {
       $_SESSION["formid"] = md5(rand(0,10000000));
   ?>
+  
+  <h2>Add Client</h2>
   
   <form name="insertClient" id="insert_client" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
   	
@@ -76,7 +81,9 @@
   	</div>
   
   	<input type="hidden" name="formid" value="<?php echo htmlspecialchars($_SESSION["formid"]); ?>" />
-  	<input class="form-submit" id="submit" type="submit" id="submitClient" name="submitClient" value="Submit" />
+  	<input class="form-submit dark" id="submit" type="submit" id="submitClient" name="submitClient" value="Submit" />
   </form>
   <?php } ?> 
 </div>    
+
+<?php include "templates/footer.php"; ?>

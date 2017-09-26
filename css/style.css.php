@@ -21,6 +21,20 @@
     /*----------------------------------------------*/
 ?>
 /*----------------------------------------------*/
+/* Helper css
+/*----------------------------------------------*/
+  .container {
+  	background: #3a3a3a;
+  	padding: <?=$gutter?>;	
+  }
+  
+  .dark {
+    background-color: <?=$dark?>;
+  }
+/*----------------------------------------------*/
+/* End
+/*----------------------------------------------*/
+/*----------------------------------------------*/
 /* General CSS
 /*----------------------------------------------*/
   body {
@@ -40,8 +54,16 @@
     margin-bottom: 50px;
   }
   
-  h1,h2 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: <?=$gutter?>;
   }
   
   label, p, a, h1, div {
@@ -52,28 +74,69 @@
       color: #008000;
   }
   
+  select {
+    border: 2px solid <?=$dark?>;
+    -webkit-appearance: button;
+    padding: 1rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    border-radius: 0px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
   /*----------------------------------------------*/
   /* Buttons
   /*----------------------------------------------*/
+  .button_wrapper {
+    text-align: center;
+  }
   a.button {
     text-decoration: none;  
   }
   
   .button,
   input.form-submit {
-      padding: 1.2rem 2rem;
-      border: none;
-      background: #fff;
-      color: <?=$dark?>;
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: 1rem;
-      position: relative;
-      margin: 0 auto;
-      cursor: pointer;
-      display: inline-block;
-      zoom: 1;
-      margin: 0 auto;
+    padding: 1.2rem 2rem;
+    border: none;
+    background: #fff;
+    color: <?=$dark?>;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    position: relative;
+    margin: 0 auto;
+    cursor: pointer;
+    display: inline-block;
+    zoom: 1;
+    margin: 0 auto;
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-property: background-colors;
+    -moz-transition-duration: 0.3s;
+    -moz-transition-timing-function: ease;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+  }
+  
+  .button:hover,
+  input.form-submit:hover {
+    background-color: <?=$dark?>;
+    color: #fff;
+  }
+  
+  input.form-submit.dark {
+    background-color: <?=$dark?>;
+    color: #fff;
+  }
+  
+  input.form-submit.dark:hover {
+    background-color: #fff;
+    color: <?=$dark?>;
   }
   /*----------------------------------------------*/
   /* End
@@ -152,22 +215,15 @@
         box-sizing: border-box;
       }
       
+      .success_message {
+        display: block;
+      }
+      
   /*----------------------------------------------*/
   /* End
   /*----------------------------------------------*/
 /*----------------------------------------------*/
 /* End general css
-/*----------------------------------------------*/
-/*----------------------------------------------*/
-/* Helper css
-/*----------------------------------------------*/
-  .container {
-  	background: #3a3a3a;
-  	padding: <?=$gutter?>;
-  	
-  }
-/*----------------------------------------------*/
-/* End
 /*----------------------------------------------*/
 /*----------------------------------------------*/
 /* Header
