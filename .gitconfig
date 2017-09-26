@@ -1,0 +1,10 @@
+[user]
+    name = Andy
+    email = aaron.richard.andy@gmail.com
+[core]
+    editor = editor
+    pager = most
+[color]
+    ui = auto
+[merge]
+    conflictstyle = diff3
