@@ -1,7 +1,7 @@
 <?php
   include "templates/header.php";
-  require "config.php";
-  require "common.php";
+  require "data/config.php";
+  require "data/common.php";
   
   /*----------------------------------------------*/
   /* Get Clients
@@ -29,7 +29,7 @@
 
 <div class="container">
   <h2>Clients</h2>
-  <a href="addClient.php" class="button">Add Client</a>
+  <a href="/data/addClient.php" class="button">Add Client</a>
   <table>
     
     <thead>

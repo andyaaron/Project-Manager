@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include "templates/header.php";
+  include "../templates/header.php";
   // require some files...
   require "config.php";
   require "common.php";
@@ -86,4 +86,4 @@
   <?php } ?> 
 </div>    
 
-<?php include "templates/footer.php"; ?>
+<?php include "../templates/footer.php"; ?>
