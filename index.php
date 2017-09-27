@@ -28,6 +28,7 @@
 ?>
 
 <div class="container">
+  <h2>Clients</h2>
   <a href="addClient.php" class="button">Add Client</a>
   <table>
     

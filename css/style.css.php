@@ -167,7 +167,10 @@
       table td,
       table th {
       	padding: <?=$gutter_half?>;
-      	border-bottom: 1px solid #aaa;
+      }
+      
+      table p {
+        color: #fff;
       }
   /*----------------------------------------------*/
   /* End tables
@@ -178,7 +181,7 @@
       form {
         max-width: 30rem;
         padding: <?=$gutter?>;
-        margin: <?=$gutter?> auto;
+        margin: 0 auto;
         background: #fff;
         color: #373737;
       }

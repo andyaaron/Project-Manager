@@ -11,13 +11,6 @@
   $(document).ready(function(){
       
     $('#select_client').on('change', function(event){
-      if($(this).val() == 0)
-      {
-        $('#project_table tbody').empty();
-        console.log("no client selected");
-      }
-      else
-      {
        var values = $(this).serialize();
        console.log("client selected: "+$(this).val());
        $.ajax({
@@ -32,7 +25,7 @@
          }
          
        }); 
-      }
+
     });
   
   });
@@ -62,15 +55,15 @@
           echo $sql . "<br>" . $error->getMessage();
       }
   /*----------------------------------------------*/
-  /* End get clients
+  /* End
   /*----------------------------------------------*/
   
   /*----------------------------------------------*/
-  /* get Projects
+  /* Get projects
   /*----------------------------------------------*/
     try
     {
-      $getProjects = "SELECT a.client_id, a.project_id, a.project_name,
+      $getProjects = "SELECT a.client_id, a.project_name,
                       b.client_id, b.display_name
                       FROM projects a
                       INNER JOIN clients b on a.client_id = b.client_id";
@@ -88,57 +81,45 @@
   /*----------------------------------------------*/
 ?>
 
-<form>
-  <select id="select_client" name="select_client">
-    <option value="0">Select a client...</option>
-    <?php
-      foreach ($result as $row)
-      { ?>
-      <option value="<?=escape($row['client_id'])?>"><?=escape($row['display_name'])?></option>
-      <?php  
-      } ?>
-    
-  </select>
-</form>
-
-<table id="project_table">
-  <thead>
-    <tr>
-      <th>Client</th>
-      <th>Project</th>      
-    </tr>
-  </thead>
+<div class="container">
   
-  <tbody>
-    
-  </tbody>
-</table>
-
-<table>
+  <h2>Projects</h2>
   
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Client</th>
-      <th>Project</th>
-    </tr>
-  </thead>
-  
-  <tbody>
-    <?php
-        foreach ($projects as $project)
+  <form>
+    <select id="select_client" name="select_client">
+      <option value="0">All Clients</option>
+      <?php
+        foreach ($result as $row)
         { ?>
-    <tr>
-        <td><?=escape($project['project_id'])?></td>
-        <td><?=escape($project['display_name'])?></td>
-        <td><?=escape($project['project_name'])?></td>
-    </tr>
-    <?php 
+        <option value="<?=escape($row['client_id'])?>"><?=escape($row['display_name'])?></option>
+        <?php  
         } ?>
-  </tbody>
-  
-</table>
+      
+    </select>
+  </form>
+ 
+  <table id="project_table">
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>Project</th>      
+      </tr>
+    </thead>
+    
+    <tbody>
+      <?php
+          foreach ($projects as $project)
+          { ?>
+      <tr>
+          <td><?=escape($project['display_name'])?></td>
+          <td><?=escape($project['project_name'])?></td>
+      </tr>
+      <?php 
+          } ?>
+    </tbody>
+  </table>
 
+</div>
 
 
 <?php include "templates/footer.php"; ?>
