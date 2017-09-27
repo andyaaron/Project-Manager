@@ -24,7 +24,6 @@
   	<ul id="main-menu-links">
       	<li><a href="index.php">Clients</a></li>
       	<li><a href="projects.php">Projects</a></li>
-      	<li><a href="services.php">Services</a></li>
       	<li><a href="invoices.php">Invoices</a></li>
   	</ul>
 	</div>

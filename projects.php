@@ -1,34 +1,34 @@
 <?php
   include "templates/header.php";
-  require "config.php";
-  require "common.php";
+  require "data/config.php";
+  require "data/common.php";
 ?>
 
 <script>
   /*----------------------------------------------*/
   /* Ajax query to load project table
   /*----------------------------------------------*/
-  $(document).ready(function(){
-      
-    $('#select_client').on('change', function(event){
-       var values = $(this).serialize();
-       console.log("client selected: "+$(this).val());
-       $.ajax({
-         url: "data_file.php",
-         type: "post",
-         data: values,
-         success: function(data){
-           $("#project_table tbody").empty().append(data)
-         },
-         error:function(){
-           $("#project_table tbody").empty().append('something went wrong!');
-         }
-         
-       }); 
-
-    });
+    $(document).ready(function(){
+        
+      $('#select_client').on('change', function(event){
+         var values = $(this).serialize();
+         console.log("client selected: "+$(this).val());
+         $.ajax({
+           url: "data_file.php",
+           type: "post",
+           data: values,
+           success: function(data){
+             $("#project_table tbody").empty().append(data)
+           },
+           error:function(){
+             $("#project_table tbody").empty().append('something went wrong!');
+           }
+           
+         }); 
   
-  });
+      });
+    
+    });
   /*----------------------------------------------*/
   /* End
   /*----------------------------------------------*/
