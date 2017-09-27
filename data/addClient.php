@@ -4,9 +4,6 @@
   // require some files...
   require "config.php";
   require "common.php";
-
- 
-  $date = date('Y-m-d H:i:s');
   
   /*----------------------------------------------*/
   /* Submit client form.

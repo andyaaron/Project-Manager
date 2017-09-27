@@ -1,6 +1,7 @@
 <?php
   include "templates/header.php";
   require "data/config.php";
+  require "data/getClients.php";
   require "data/common.php";
 ?>
 
@@ -14,7 +15,7 @@
          var values = $(this).serialize();
          console.log("client selected: "+$(this).val());
          $.ajax({
-           url: "data_file.php",
+           url: "data/data_file.php",
            type: "post",
            data: values,
            success: function(data){
@@ -35,28 +36,7 @@
 </script>
 
 <?php
-  /*----------------------------------------------*/
-  /* Get Clients
-  /*----------------------------------------------*/
-      try
-      {
-          $connection = new PDO($dsn, $username, $password, $options);
-          
-          $getClients = "SELECT *
-                  FROM clients";
-          
-          $statement = $connection->prepare($getClients);
-          $statement->execute();
-          
-          $result = $statement->fetchAll();
-      }
-      catch(PDOexception $error)
-      {
-          echo $sql . "<br>" . $error->getMessage();
-      }
-  /*----------------------------------------------*/
-  /* End
-  /*----------------------------------------------*/
+
   
   /*----------------------------------------------*/
   /* Get projects
@@ -84,7 +64,7 @@
 <div class="container">
   
   <h2>Projects</h2>
-  
+  <a href="/data/addProject.php" class="button">Add Project</a>
   <form>
     <select id="select_client" name="select_client">
       <option value="0">All Clients</option>

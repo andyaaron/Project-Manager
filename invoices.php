@@ -4,9 +4,6 @@
   require "data/common.php";
 ?>
 
-
-
-
 <?php
   include "templates/footer.php";
 ?>

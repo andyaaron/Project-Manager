@@ -1,5 +1,5 @@
 <?php
-  require "data/config.php";
+  require "config.php";
   
   /*----------------------------------------------*/
   /* If option is changed on projects page
