@@ -18,8 +18,8 @@
             $new_client = array(
                 "display_name" => $_POST['displayname'],
                 "contact_name" => $_POST['contactname'],
-                "email"       => $_POST['email'],
-                "phone"       => $_POST['phone']
+                "email"        => $_POST['email'],
+                "phone"        => $_POST['phone']
             );
             
             $sql = sprintf(
@@ -49,7 +49,7 @@
       $_SESSION["formid"] = '';
       
       echo "<h2 class='success_message'>" . $_POST["displayname"] . " added to client table.</h2>";
-      echo "<div class='button_wrapper'><a class='button' href='index.php'>Go Back</a></div>";
+      echo "<div class='button_wrapper'><a class='button' href='../index.php'>Go Back</a></div>";
     }
     else
     {
