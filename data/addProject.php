@@ -52,8 +52,9 @@
     {
       $_SESSION["formid"] = '';
       
-      echo "<h2 class='success_message'>" . $_POST["projectname"] . " added to project table.</h2>";
-      echo "<div class='button_wrapper'><a class='button' href='../projects.php'>Go Back</a></div>";
+      $output = "<h2 class='success_message'>" . $_POST["projectname"] . " added to project table.</h2> <div class='button_wrapper'><a class='button' href='../projects.php'>Go Back</a></div>";
+      
+      echo htmlentities($output, ENT_QUOTES, 'UTF-8')
     }
     else
     {

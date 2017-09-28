@@ -181,7 +181,7 @@
       form {
         max-width: 30rem;
         padding: <?=$gutter?>;
-        margin: 0 auto;
+        margin: <?=$gutter?> auto;
         background: #fff;
         color: #373737;
       }
